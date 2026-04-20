@@ -5,13 +5,12 @@ body {
   color: #3E3A36;
   text-align: center;
 }
-
 section {
   padding: 60px 20px;
 }
 
 .hero {
-  background-color: red;
+  background-color: #F5F1EA;
 }
 
 h1 {
