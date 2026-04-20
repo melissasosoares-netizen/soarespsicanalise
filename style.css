@@ -73,3 +73,37 @@ p {
   border-radius: 6px;
 }
 
+.hero {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #F5F1EA, #E8E2D8);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.hero-texto {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-texto h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.hero-texto p {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+.hero-imagem img {
+  width: 350px;
+  border-radius: 20px;
+}
