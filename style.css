@@ -132,7 +132,7 @@ p {
   height: 100%;
 
   /* degradê suave da esquerda pra direita */
-  background: linear-gradient(to right, #F5F1EA 10%, rgba(245,241,234,0) 60%);
+  background: linear-gradient(to right, #F5F1EA 25%, rgba(245,241,234,0) 75%);
 
   border-radius: 20px;
 }
