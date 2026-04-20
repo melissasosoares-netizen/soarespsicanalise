@@ -36,3 +36,21 @@ p {
   text-decoration: none;
   border-radius: 5px;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.texto {
+  text-align: left;
+}
+
+.foto {
+  width: 140px;
+  border-radius: 50%;
+}
