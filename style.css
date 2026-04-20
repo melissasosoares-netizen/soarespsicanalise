@@ -107,3 +107,32 @@ p {
   width: 350px;
   border-radius: 20px;
 }
+
+.hero-imagem {
+  position: relative;
+}
+
+.hero-imagem img {
+  width: 380px;
+  border-radius: 20px;
+  display: block;
+}
+
+/* camada de degradê */
+.imagem-overlay {
+  position: relative;
+}
+
+.imagem-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* degradê suave da esquerda pra direita */
+  background: linear-gradient(to right, #F5F1EA 10%, rgba(245,241,234,0) 60%);
+
+  border-radius: 20px;
+}
