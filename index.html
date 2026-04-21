@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<nav class="menu-topo">
+  <a href="#como-funciona">Como funciona</a>
+  <a href="#sobre-mim">Sobre mim</a>
+  <a href="#contato">Agende sua sessão</a>
+</nav>
+
 <head>
   <meta charset="UTF-8">
   <title>Melissa Soares | Psicanalista</title>
@@ -36,9 +43,9 @@
   </div>
 </section>
 
-<section class="como-funciona">
+<section class="como-funciona" id="como-funciona">
   <div class="como-container">
-<divclass="bloco-texto">
+<div class="bloco-texto">
     <h2>Atendimento online: como funciona?</h2>
 
     <div class="item">
@@ -78,7 +85,7 @@
 </section>
 
 
-    <section class="sobre">
+ <section class="sobre-mim" id="sobre-mim">
   <div class="container">
 <div class="foto-container">
 <img src="melissa.png" alt="Melissa Soares" class="foto">
@@ -99,16 +106,90 @@
   Meu papel é caminhar ao seu lado nessa investigação, com a ética e o cuidado
   que a sua história merece.
 </p>
-    </div>
-    
-</section>
 
-<section class="contato">
+    </div>
+ 
+</section>
+<hr class="linha-separadora">
+<div class="container">
+<section class="contato" id="contato">
   <h2>Contato</h2>
   <a href="https://wa.me/5553991636670?text=Olá%2C%20gostaria%20de%20agendar%20um%20atendimento" class="btn">
-    Agendar conversa
+    WhatsApp
   </a>
+
+<p class="telefone">
+    Telefone: (53) 99163-6670
+  </p>
+
+<a href="https://instagram.com/melissasoares.psicanalista" class="instagram-link" target="_blank">
+    Instagram @melissasoares.psicanalista
+  </a>
+</div>
 </section>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".menu-topo a");
+
+let clicked = false;
+
+// ativa baseado na posição da tela
+function updateByScroll() {
+  if (clicked) return;
+
+  let currentSection = null;
+  let minDistance = Infinity;
+
+  const screenCenter = window.innerHeight / 2;
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+
+    const distance = Math.abs(screenCenter - sectionCenter);
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      currentSection = section;
+    }
+  });
+
+  if (!currentSection) return;
+
+  setActive(currentSection.id);
+}
+
+// ativa manualmente (clique)
+function setActive(id) {
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + id) {
+      link.classList.add("active");
+    }
+  });
+}
+
+// clique no menu
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    clicked = true;
+
+    const id = link.getAttribute("href").replace("#", "");
+    setActive(id);
+
+    // libera o scroll depois que terminar a animação
+    setTimeout(() => {
+      clicked = false;
+    }, 600);
+  });
+});
+
+// scroll normal
+window.addEventListener("scroll", updateByScroll);
+window.addEventListener("load", updateByScroll);
+</script>
+
 
 </body>
 </html>
