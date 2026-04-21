@@ -144,6 +144,7 @@ p {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
+  display: flex;
 }
 
 .como-container h2 {
@@ -170,7 +171,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1100px;
+  max-width: 100px;
   margin: 0 auto;
   gap: 80px; /* aumenta o respiro interno */
 }
@@ -190,8 +191,85 @@ p {
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 80px;
+    gap: 20px;
 }
+
+.bloco-texto {
+  flex: 1;
+}
+
+.foto-container {
+  flex: 0 0 250px; /* largura fixa da imagem */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.foto {
+  max-width: 400px;
+  height: auto;
+  opacity: 0.95;
+  width: 100%;
+}
+
+
+.menu-topo {
+  position: sticky;
+  top: 0;
+  background-color: #94a67a; /* oliva elegante */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 20px;
+  z-index: 999;
+}
+
+.menu-topo a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+
+}
+
+.menu-topo a:hover {
+  opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menu-topo a.active {
+  opacity: 1;
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+  padding-bottom: 4px;
+}
+
+.telefone {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #6b7d4f;
+  letter-spacing: 0.3px;
+}
+
+.instagram-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7d4f;
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  opacity: 0.7;
+}
+
+.contato-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+
 
