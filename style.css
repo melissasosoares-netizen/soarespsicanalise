@@ -51,9 +51,11 @@ p {
 }
 
 .foto {
-  width: 140px;
+  width: 240px;
   border-radius: 50%;
+ 
 }
+
 
 .hero {
   height: 80vh;
@@ -130,3 +132,66 @@ p {
   font-size: 2.0em;
   margin-bottom: 18px;
 }
+
+.como-funciona {
+  padding: 80px 10px 80px;
+  background-color: #EFEAE2;
+  
+}
+
+
+.como-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.como-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.item {
+  margin-bottom: 25px;
+}
+
+.item h3 {
+  color: #7A8A6B;
+  margin-bottom: 8px;
+}
+
+.sobre {
+  padding: 0px 20px 80px;
+  background-color: #EFEAE2;
+}
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 80px; /* aumenta o respiro interno */
+}
+
+
+.linha-separadora {
+    border: none;             /* Garante que não haja bordas laterais ou inferiores */
+    border-top: 1px solid rgba(67, 67, 67, 0.2); /* Cor do texto com 20% de transparência */
+    width: 300px;              /* Comprimento da linha */
+    height: 0;                /* Garante que a linha não tenha altura/fundo próprio */
+    margin: 0px auto;        /* Espaço generoso para manter o respiro */
+    background-color: transparent; /* Garante que não haja cor de fundo na linha */
+}
+
+
+.como-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 80px;
+}
+
