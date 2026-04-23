@@ -346,3 +346,65 @@ html {
 .sobre-mim p {
   margin: 0 0 15px;
 }
+
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-texto,
+  .hero-imagem {
+    width: 100%;
+  }
+
+  .hero-imagem {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  /* COMO FUNCIONA */
+  .como-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .foto-container {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .foto {
+    max-width: 200px;
+  }
+
+  /* SOBRE */
+  .sobre-mim .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mim .texto {
+    text-align: left;
+  }
+
+  /* MENU */
+  .menu-topo {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+}
+
+
+p {
+  line-height: 1.6;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
