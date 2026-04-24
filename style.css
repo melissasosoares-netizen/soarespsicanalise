@@ -539,6 +539,33 @@ img {
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+
+  .contato-conteudo {
+    align-items: center;
+  }
+
+  .btn,
+  .btn-secundario {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+.frase-contato {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contato {
+    text-align: center;
+  }
+}
+
+
+
+
 
 
 
