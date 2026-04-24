@@ -555,11 +555,6 @@ img {
   font-size: 1.5em;
 }
 
-.hero-texto h1 {
-  font-size: 1.6em;
-  margin-bottom: 10px;
-}
-
 }
 
 
@@ -602,6 +597,12 @@ img {
   margin-bottom: 8px;
 }
 
+.hero-texto p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  max-width: 320px;
+  margin: 0 auto 10px;
+}
 
 .hero-texto {
   text-align: center;
