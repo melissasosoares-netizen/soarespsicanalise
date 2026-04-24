@@ -563,6 +563,19 @@ img {
     max-width: 90%;
   }
 
+.hero-texto p {
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  max-width: 100%;
+}
+
+.hero-texto {
+  width: 100%;
+  max-width: none;
+  padding: 0 10px;
+}
+
 .hero {
   padding: 60px 20px 40px;
 }
