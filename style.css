@@ -10,7 +10,14 @@ section {
 }
 
 .hero {
-  background-color: #F5F1EA;
+  padding: 120px 20px 80px;
+
+  background: linear-gradient(
+    to right,
+    #F5F1EA 50%,
+    #d6d0c4 75%,
+    #c5beb1 100%
+  );
 }
 
 h1 {
@@ -54,14 +61,6 @@ p {
 }
 
 
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -72,16 +71,6 @@ p {
   border-radius: 6px;
 }
 
-.hero {
-  padding: 120px 20px 80px;
-
-  background: linear-gradient(
-    to right,
-    #F5F1EA 50%,
-    #d6d0c4 75%,
-    #c5beb1 100%
-  );
-}
 
 .hero-container {
   display: flex;
@@ -91,7 +80,7 @@ p {
   max-width: 1100px;
   margin: 0 auto;
 
-  overflow: hidden; /* IMPORTANTE */
+  overflow: visible; /* IMPORTANTE */
 }
 
 /* TEXTO */
@@ -537,10 +526,6 @@ img {
 
 @media (max-width: 768px) {
 
-  .contato-conteudo {
-    align-items: center;
-  }
-
   .btn,
   .btn-secundario {
     width: 100%;
@@ -566,11 +551,11 @@ body {
 
 
 .contato-conteudo {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+  gap: 14px;
 }
-
-
 
 
 
