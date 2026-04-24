@@ -406,6 +406,9 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 14px;
+
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -542,6 +545,22 @@ img {
   .contato {
     text-align: center;
   }
+
+.nome {
+  margin-bottom: 6px;
+  font-size: 1.5em;
+}
+
+.hero-texto h1 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.hero-texto p {
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
 }
 
 
@@ -550,12 +569,35 @@ body {
 }
 
 
-.contato-conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+@media (max-width: 768px) {
+  .btn {
+    width: auto;
+    max-width: 90%;
+  }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-imagem img {
+    max-width: 90%;
+  }
+}
+
+
+
+
+
+
+
 
 
 
