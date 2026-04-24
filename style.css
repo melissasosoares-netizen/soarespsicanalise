@@ -602,12 +602,6 @@ img {
   margin-bottom: 8px;
 }
 
-.hero-texto p {
-  font-size: 0.95em;
-  line-height: 1.4;
-  max-width: 320px;
-  margin: 0 auto 10px;
-}
 
 .hero-texto {
   text-align: center;
