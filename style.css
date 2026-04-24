@@ -568,6 +568,7 @@ img {
   word-break: keep-all;
   overflow-wrap: normal;
   max-width: 100%;
+  text-align: left;
 }
 
 .hero-texto {
