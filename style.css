@@ -585,6 +585,10 @@ img {
     max-width: 90%;
   }
 
+.hero {
+  padding: 60px 20px 40px;
+}
+
 .nome {
   font-size: 1.3em;
   margin-bottom: 4px;
@@ -608,6 +612,12 @@ img {
   text-align: center;
 }
 
+.hero-texto p {
+  font-size: 0.95em;
+  line-height: 1.35;
+  max-width: 280px;
+  margin: 0;
+}
 }
 
 
