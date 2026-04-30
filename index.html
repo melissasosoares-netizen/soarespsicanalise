@@ -23,15 +23,25 @@
 <body>
 
   <!-- MENU -->
-  <nav class="menu-topo">
-    <a href="#como-funciona">Sobre a análise</a>
-    <a href="#sobre-mim">Sobre mim</a>
-    <a href="#contato">Agende sua sessão</a>
-  </nav>
+<nav class="menu-topo" aria-label="Menu principal">
+  <div class="menu-container">
+    <div class="menu-brand">
+      Melissa Soares | Psicanalista
+    </div>
 
-  <main>
+    <div class="menu-links">
+      <a href="#inicio">Início</a>
+      <a href="#como-funciona">Sobre a análise</a>
+      <a href="#sobre-mim">Sobre mim</a>
+      <a href="#contato">Agende sua sessão</a>
+    </div>
+  </div>
+</nav>
+
+<main>
 
     <!-- HERO -->
+<header class="hero" id="inicio">
     <header class="hero">
       <div class="hero-container">
 
@@ -160,13 +170,12 @@
       <div class="container">
 
         <h2>Contato</h2>
-
+    
         <p class="frase-contato">
           Se você deseja iniciar este percurso ou tirar dúvidas sobre o atendimento,
           sinta-se à vontade para entrar em contato.
         </p>
-
-        <a
+            <a
           href="https://wa.me/5553991636670?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento."
           class="btn"
           target="_blank"
@@ -174,7 +183,9 @@
         >
           WhatsApp
         </a>
-
+    <p class="assinatura-final">
+  Melissa Soares - Psicanalista | Atendimentos online
+    </p>
         <p class="telefone">
           Telefone: (53) 99163-6670
         </p>
@@ -187,73 +198,98 @@
         >
           Instagram: @melissasoares.psicanalista
         </a>
-
+    
       </div>
     </section>
 
   </main>
 
-  <!-- SCRIPT -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".menu-topo a");
+ <script>
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".menu-topo a");
 
-    let clicked = false;
+/* scroll suave com easing */
+function smoothScroll(target, duration) {
+  const targetPosition = target.offsetTop - 70;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
 
-    function setActive(id) {
-      navLinks.forEach(link => {
-        link.classList.remove("active");
+  let startTime = null;
 
-        if (link.getAttribute("href") === "#" + id) {
-          link.classList.add("active");
-        }
-      });
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+
+    const timeElapsed = currentTime - startTime;
+
+    const run = easeInOutCubic(
+      timeElapsed,
+      startPosition,
+      distance,
+      duration
+    );
+
+    window.scrollTo(0, run);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  /* easing mais cinematográfico */
+  function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+
+    if (t < 1) {
+      return (c / 2) * t * t * t + b;
     }
 
-    function updateByScroll() {
-      if (clicked) return;
+    t -= 2;
 
-      let currentSection = null;
-      let minDistance = Infinity;
+    return (c / 2) * (t * t * t + 2) + b;
+  }
 
-      const screenCenter = window.innerHeight / 2;
+  requestAnimationFrame(animation);
+}
 
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        const sectionCenter = rect.top + rect.height / 2;
+/* clique menu */
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
 
-        const distance = Math.abs(screenCenter - sectionCenter);
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
 
-        if (distance < minDistance) {
-          minDistance = distance;
-          currentSection = section;
-        }
-      });
-
-      if (currentSection) {
-        setActive(currentSection.id);
-      }
+    if (targetSection) {
+      smoothScroll(targetSection, 1000);
     }
+  });
+});
 
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        clicked = true;
+/* menu ativo ao scroll */
+window.addEventListener("scroll", () => {
+  let current = "";
 
-        const id = link
-          .getAttribute("href")
-          .replace("#", "");
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
 
-        setActive(id);
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.id;
+    }
+  });
 
-        setTimeout(() => {
-          clicked = false;
-        }, 600);
-      });
-    });
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
 
-    window.addEventListener("scroll", updateByScroll);
-    window.addEventListener("load", updateByScroll);
-  </script>
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
