@@ -1,27 +1,45 @@
+/* =========================
+   RESET / BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   background-color: #F5F1EA;
   color: #3E3A36;
   text-align: center;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 section {
   padding: 60px 20px;
 }
 
-.hero {
-  padding: 120px 20px 80px;
+/* =========================
+   TIPOGRAFIA
+========================= */
 
-  background: linear-gradient(
-    to right,
-    #F5F1EA 50%,
-    #d6d0c4 75%,
-    #c5beb1 100%
-  );
+h1,
+h2,
+.nome {
+  font-family: 'Playfair Display', serif;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
   font-size: 2.8em;
 }
 
@@ -32,24 +50,18 @@ h2 {
 p {
   max-width: 600px;
   margin: 0 auto 15px;
+  line-height: 1.6;
 }
+
+/* =========================
+   LAYOUT GLOBAL
+========================= */
 
 .container {
   padding: 0 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
-
-.texto {
-  text-align: left;
-}
-
-.foto {
-  width: 240px;
-  border-radius: 50%;
- 
-}
-
 
 .btn {
   display: inline-block;
@@ -61,132 +73,23 @@ p {
   border-radius: 6px;
 }
 
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  max-width: 1100px;
-  margin: 0 auto;
-
-  overflow: visible; /* IMPORTANTE */
-}
-
-/* TEXTO */
-.hero-texto {
-  width: 50%;
-  text-align: left;
-}
-
-/* IMAGEM */
-.hero-imagem {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-imagem img {
-  width: 100%;
-  max-width: 450px;
-
-  /* fade lateral */
-  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
-  mask-image: linear-gradient(to left, black 80%, transparent 100%);
-}
-
-.nome {
-  display: block;
-  font-size: 2.0em;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  color: #7A8A6B;
-  font-family: 'Playfair Display', serif;
-}
-
-.hero-texto h1 {
-  font-size: 2.0em;
-  margin-bottom: 18px;
-}
-
-.como-funciona {
-  padding: 80px 10px 80px;
-  background-color: #EFEAE2;
-  
-}
-
-
-.como-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
-  
-}
-
-.como-container h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.item {
-  margin-bottom: 25px;
-}
-
-.item h3 {
-  color: #7A8A6B;
-  margin-bottom: 8px;
-}
-
-.sobre {
-  padding: 0px 20px 80px;
-  background-color: #EFEAE2;
-}
-
-.sobre-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 800px;
-  margin: 0 auto;
-  gap: 80px; /* aumenta o respiro interno */
-}
-
-
 .linha-separadora {
-    border: none;             /* Garante que não haja bordas laterais ou inferiores */
-    border-top: 1px solid rgba(67, 67, 67, 0.2); /* Cor do texto com 20% de transparência */
-    width: 300px;              /* Comprimento da linha */
-    height: 0;                /* Garante que a linha não tenha altura/fundo próprio */
-    margin: 0px auto;        /* Espaço generoso para manter o respiro */
-    background-color: transparent; /* Garante que não haja cor de fundo na linha */
+  border: none;
+  border-top: 1px solid rgba(67, 67, 67, 0.2);
+  width: 300px;
+  height: 0;
+  margin: 0 auto;
+  background-color: transparent;
 }
 
-
-
-
-.bloco-texto {
-  flex: 1;
-}
-
-.foto-container {
-  flex: 0 0 180px; /* largura fixa da imagem */
-  display: flex;
-  justify-content: flex-end;
-}
-
-.foto {
-  max-width: 400px;
-  height: auto;
-  opacity: 0.95;
-  width: 100%;
-}
-
+/* =========================
+   MENU
+========================= */
 
 .menu-topo {
   position: sticky;
   top: 0;
-  background-color: #94a67a; /* oliva elegante */
+  background-color: #94a67a;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -199,15 +102,11 @@ p {
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
-
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .menu-topo a:hover {
   opacity: 0.7;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .menu-topo a.active {
@@ -216,74 +115,132 @@ html {
   padding-bottom: 4px;
 }
 
-.telefone {
-  margin-top: 15px;
-  font-size: 15px;
-  color: #6b7d4f;
-  letter-spacing: 0.3px;
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 120px 20px 80px;
+  background: linear-gradient(
+    to right,
+    #F5F1EA 50%,
+    #d6d0c4 75%,
+    #c5beb1 100%
+  );
 }
 
-.instagram-link {
-  margin-top: 10px;
-  font-size: 15px;
-  color: #6b7d4f;
-  text-decoration: none;
-}
-
-.instagram-link:hover {
-  opacity: 0.7;
-}
-
-.contato-conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-
-.sobre-mim .container {
+.hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: visible;
 }
 
-.foto-container {
-  flex: 1;
-}
-
-.foto {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-}
-
-.texto {
-  flex: 1;
+.hero-texto {
+  width: 50%;
+  max-width: 480px;
   text-align: left;
 }
 
-.contato {
+.nome {
+  display: block;
+  font-size: 2em;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: #7A8A6B;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.hero-texto h1 {
+  font-size: 2.2em;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.hero-texto p {
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.hero-texto p:first-of-type {
+  font-weight: 500;
+}
+
+.hero-imagem {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-imagem img {
+  width: 100%;
+  max-width: 450px;
+  opacity: 0.95;
+  filter: blur(0.3px);
+
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 80%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to left,
+    black 80%,
+    transparent 100%
+  );
+}
+
+/* =========================
+   COMO FUNCIONA
+========================= */
+
+.como-funciona {
+  padding: 80px 10px;
   background-color: #EFEAE2;
 }
 
-
-.sobre-mim {
-  padding: 60px 20px 60px;
+.como-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.sobre-mim .linha-separadora {
-  margin-top: 100px;
-}
-
-
-.como-funciona .bloco-texto {
+.bloco-texto {
   flex: 1;
   min-width: 0;
 }
 
+.como-container h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.como-container p {
+  max-width: 100%;
+  margin: 0 0 15px;
+}
+
+.item {
+  margin-bottom: 25px;
+}
+
+.item h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #7A8A6B;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   SOBRE MIM
+========================= */
+
+.sobre-mim {
+  padding: 60px 20px;
+}
 
 .sobre-mim .container {
   display: flex;
@@ -292,13 +249,18 @@ html {
   gap: 80px;
 }
 
+.sobre-mim h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
 .sobre-mim .foto-container {
   flex: 0 0 auto;
 }
 
 .sobre-mim .foto {
-  width: 260px; /* ajusta fino depois */
-  height: auto;
+  width: 260px;
+  border-radius: 50%;
 }
 
 .sobre-mim .texto {
@@ -311,9 +273,68 @@ html {
   margin: 0 0 15px;
 }
 
-@media (max-width: 768px) {
+.sobre-mim .linha-separadora {
+  margin-top: 100px;
+}
 
-  /* HERO */
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+  background-color: #EFEAE2;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.contato-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+.frase-contato {
+  max-width: 100%;
+  margin-bottom: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.telefone,
+.instagram-link {
+  font-size: 15px;
+  color: #6b7d4f;
+}
+
+.telefone {
+  margin-top: 15px;
+  letter-spacing: 0.3px;
+}
+
+.instagram-link {
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
   .hero-container {
     flex-direction: column;
     text-align: center;
@@ -324,15 +345,54 @@ html {
     width: 100%;
   }
 
+  .hero-texto {
+    max-width: none;
+    padding: 0 10px;
+  }
+
+  .hero-texto p {
+    font-size: 0.98em;
+    line-height: 1.5;
+    max-width: 100%;
+    margin: 0 auto 10px;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-align: left;
+  }
+
   .hero-imagem {
     justify-content: center;
     margin-top: 20px;
   }
 
-  /* COMO FUNCIONA */
+  .hero-imagem img {
+    max-width: 90%;
+  }
+
+  .nome {
+    font-size: 1.3em;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .hero-texto h1 {
+    font-size: 1.4em;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
   .como-container {
-    text-align: left;
     padding: 0 20px;
+  }
+
+  .sobre-mim .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mim .texto {
+    text-align: left;
   }
 
   .foto-container {
@@ -344,263 +404,14 @@ html {
     max-width: 200px;
   }
 
-  /* SOBRE */
-  .sobre-mim .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-mim .texto {
-    text-align: left;
-  }
-
   .menu-topo {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 20px;
   }
 
-}
-
-
-p {
-  line-height: 1.6;
-}
-
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.sobre-mim h2,
-.contato h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.item h3 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-}
-
-.contato h2 {
-  margin-bottom: 10px;
-}
-
-.contato-conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.hero-texto {
-  width: 50%;
-  text-align: left;
-  max-width: 480px;
-}
-
-.hero-texto h1 {
-  margin-bottom: 16px;
-}
-
-.hero-texto p {
-  margin-bottom: 12px;
-}
-
-.nome {
-  font-size: 1.8em;
-  margin-bottom: 8px;
-}
-
-
-.hero-texto p {
-  line-height: 1.5;
-}
-
-
-.menu-topo a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
-}
-
-
-.nome {
-  display: block;
-  font-size: 2.0em;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  color: #7A8A6B;
-  font-family: 'Playfair Display', serif;
-
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-
-
-.hero-texto h1 {
-  font-size: 2.2em;
-  line-height: 1.3;
-  margin-bottom: 18px;
-}
-
-.hero-texto p:first-of-type {
-  font-weight: 500;
-}
-
-
-
-.hero-imagem img {
-  width: 100%;
-  max-width: 450px;
-
-  /* fade lateral */
-  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 100%);
-  mask-image: linear-gradient(to left, black 80%, transparent 100%);
-
-  /* NOVO: suavização geral */
-  opacity: 0.95;
-
-  /* NOVO: micro blur (quase imperceptível) */
-  filter: blur(0.3px);
-}
-
-.como-container {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.como-container p {
-  margin: 0 0 15px;
-}
-
-.como-container p {
-  max-width: 100%;
-}
-
-
-.frase-contato {
-  max-width: 600px;
-  margin-bottom: 10px;
-}
-
-.frase-contato {
-  max-width: 600px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  opacity: 0.9;
-}
-
-@media (max-width: 768px) {
-
-  .btn,
-  .btn-secundario {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-
-.frase-contato {
-  max-width: 100%;
-}
-
-  .contato {
-    text-align: center;
-  }
-
-body {
-  overflow-x: hidden;
-}
-
-
-@media (max-width: 768px) {
   .btn {
     width: auto;
     max-width: 90%;
   }
-
-.hero-texto p {
-  font-size: 0.98em;
-  line-height: 1.5;
-  max-width: 100%;
-  margin: 0 auto 10px;
-
-  /* 🔑 ISSO AQUI resolve a quebra exagerada */
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: break-word;
 }
-
-.hero-texto {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hero-imagem img {
-    max-width: 90%;
-  }
-
-.hero-texto p {
-  white-space: normal;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  max-width: 100%;
-  text-align: left;
-}
-
-.hero-texto {
-  width: 100%;
-  max-width: none;
-  padding: 0 10px;
-}
-
-.hero {
-  padding: 60px 20px 40px;
-}
-
-.nome {
-  font-size: 1.3em;
-  margin-bottom: 4px;
-  line-height: 1.2;
-}
-
-.hero-texto h1 {
-  font-size: 1.4em;
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
