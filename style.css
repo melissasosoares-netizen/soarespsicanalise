@@ -140,6 +140,13 @@ p {
   display: none;
   }
 
+  .link-desktop {
+  display: inline;
+  }
+
+  .link-mobile {
+  display: none;
+  }
 
 /* =========================
    HERO
@@ -449,8 +456,7 @@ p {
   }
 
   .menu-brand {
-    font-size: 0.95em;
-    white-space: nowrap;
+  display: none;
   }
 
   .menu-links {
@@ -460,17 +466,18 @@ p {
   font-size: 14px;
   }
 
-  .brand-desktop {
-  display: none;
-  }
-
-  .brand-mobile {
-  display: inline;
-  }
 
   /* BOTÃO */
   .btn {
     width: auto;
     max-width: 90%;
+  }
+
+  .link-desktop {
+  display: none;
+  }
+
+  .link-mobile {
+  display: inline;
   }
 }
