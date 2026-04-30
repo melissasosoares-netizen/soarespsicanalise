@@ -448,23 +448,27 @@ p {
     max-width: 200px;
   }
 
-  /* MENU */
-  .menu-container {
-    padding: 15px 20px;
-    gap: 20px;
-    overflow-x: auto;
-  }
-
-  .menu-brand {
-  display: none;
-  }
-
-  .menu-links {
+ /* MENU */
+.menu-container {
+  padding: 12px 10px;
   gap: 16px;
-  }
-  .menu-topo a {
+
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.menu-brand {
+  display: none;
+}
+
+.menu-links {
+  gap: 16px;
+  justify-content: center;
+}
+
+.menu-topo a {
   font-size: 14px;
-  }
+}
 
 
   /* BOTÃO */
