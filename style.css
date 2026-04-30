@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   overflow-x: hidden;
@@ -86,15 +82,39 @@ p {
    MENU
 ========================= */
 
+/* =========================
+   MENU
+========================= */
+
 .menu-topo {
   position: sticky;
   top: 0;
+  width: 100%;
   background-color: #94a67a;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px 20px;
   z-index: 999;
+}
+
+.menu-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 15px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-brand {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 1.1em;
+  white-space: nowrap;
+}
+
+.menu-links {
+  display: flex;
+  gap: 30px;
 }
 
 .menu-topo a {
@@ -114,6 +134,7 @@ p {
   border-bottom: 2px solid rgba(255,255,255,0.7);
   padding-bottom: 4px;
 }
+
 
 /* =========================
    HERO
@@ -326,11 +347,20 @@ p {
   opacity: 0.7;
 }
 
+.assinatura-final {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.75;
+  letter-spacing: 0.4px;
+}
+
 /* =========================
    RESPONSIVO
 ========================= */
 
 @media (max-width: 768px) {
+
+  /* HERO */
   .hero {
     padding: 60px 20px 40px;
   }
@@ -382,10 +412,12 @@ p {
     margin-bottom: 8px;
   }
 
+  /* COMO FUNCIONA */
   .como-container {
     padding: 0 20px;
   }
 
+  /* SOBRE MIM */
   .sobre-mim .container {
     flex-direction: column;
     text-align: center;
@@ -404,12 +436,24 @@ p {
     max-width: 200px;
   }
 
-  .menu-topo {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+  /* MENU */
+  .menu-container {
+    padding: 15px 20px;
     gap: 20px;
+    overflow-x: auto;
   }
 
+  .menu-brand {
+    font-size: 0.95em;
+    white-space: nowrap;
+  }
+
+  .menu-links {
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  /* BOTÃO */
   .btn {
     width: auto;
     max-width: 90%;
