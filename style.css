@@ -78,9 +78,6 @@ p {
   background-color: transparent;
 }
 
-/* =========================
-   MENU
-========================= */
 
 /* =========================
    MENU
@@ -134,6 +131,14 @@ p {
   border-bottom: 2px solid rgba(255,255,255,0.7);
   padding-bottom: 4px;
 }
+
+  .brand-desktop {
+  display: inline;
+  }
+
+  .brand-mobile {
+  display: none;
+  }
 
 
 /* =========================
@@ -449,8 +454,18 @@ p {
   }
 
   .menu-links {
-    gap: 20px;
-    flex-wrap: nowrap;
+  gap: 16px;
+  }
+  .menu-topo a {
+  font-size: 14px;
+  }
+
+  .brand-desktop {
+  display: none;
+  }
+
+  .brand-mobile {
+  display: inline;
   }
 
   /* BOTÃO */
